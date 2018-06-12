@@ -1,15 +1,14 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Rezan Mohammad: Web Developer
+this is an online shop project based on cf
 
 * Ruby version
-
+ 2.4
 * System dependencies
 
 * Configuration
+    instead of rails s:
+    rails s -b $IP -p $PORT
 
 * Database creation
 
