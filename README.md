@@ -1,5 +1,5 @@
 # README
-Rezan Mohammad: Web Developer
+Rezan Mohammad: Web Developer...
 this is an online shop project based on cf
 
 * Ruby version
