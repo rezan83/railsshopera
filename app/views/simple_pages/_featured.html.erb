@@ -1,0 +1,6 @@
+<div class="item<%= " active" if featured == @featureds.first %>">
+  <%= image_tag(featured.image_url) %>
+  <div class="carousel-caption">
+      <%= featured.name %>
+  </div>
+</div>
