@@ -4,15 +4,15 @@
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-         <% @featureds.each do |featured| %>
-            <li data-target="#carousel-example-generic" data-slide-to="<%=@featureds.index(featured) %>" class="<%= " active" if featured == @featureds.first %>"></li>
+         <% @featured_products.each do |featured| %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%=@featured_products.index(featured) %>" class="<%= " active" if featured == @featured_products.first %>"></li>
         <%end%>
       </ol>
 
       <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         
-        <%= render partial: "featured", collection: @featureds %>
+        <%= render partial: "featured", collection: @featured_products %>
     
     </div>
     

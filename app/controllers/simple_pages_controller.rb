@@ -6,6 +6,6 @@ class SimplePagesController < ApplicationController
   def contact
   end
   def landing_page
-    @featureds = Product.limit(3)
+    @featured_products = Product.limit(3)
   end
 end
