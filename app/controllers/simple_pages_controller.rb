@@ -4,9 +4,14 @@ class SimplePagesController < ApplicationController
   def about
   end
   def contact
-    redirect_to '/simple_pages/about'
   end
   def landing_page
     @featured_products = Product.limit(3)
+  end
+  def thank_you
+    @name = params[:name]
+    @email = params[:email]
+    @subject = "A new contact form message from #{@name}"
+    UserMailer.contact_form(@email, @name, @message).deliver_now
   end
 end
