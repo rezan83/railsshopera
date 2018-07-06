@@ -12,6 +12,7 @@ class SimplePagesController < ApplicationController
     @name = params[:name]
     @email = params[:email]
     @subject = "A new contact form message from #{@name}"
+    @message = params[:message]
     UserMailer.contact_form(@email, @name, @message).deliver_now
   end
 end
