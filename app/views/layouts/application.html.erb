@@ -47,6 +47,12 @@
       
       </div>
     </nav>
+    <% if notice %>
+      <p id="notice" class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p id="alert" class="alert alert-warning"><%= alert %></p>
+    <% end %>
     <%= yield %>
     <footer class="page-footer font-small blue pt-4 mt-4">
       &copy; 2018 Bike Berlin
