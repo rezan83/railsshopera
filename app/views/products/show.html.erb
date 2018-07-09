@@ -26,18 +26,21 @@
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
-<%@product.highest_rating.rating.times do %>
-  <span class="glyphicon glyphicon-star"></span>
+
+<%if @product.comments.any?%>
+  <%@product.highest_rating.rating.times do %>
+    <span class="glyphicon glyphicon-star"></span>
+  <%end%>
+  <p>
+  <%= @product.highest_rating.body %> 
+  </p>
+  <%@product.lowest_rating.rating.times do %>
+    <span class="glyphicon glyphicon-star"></span>
+  <%end%>
+  <p>
+  <%= @product.lowest_rating.body %> 
+  </p>
 <%end%>
-<p>
-<%= @product.highest_rating.body %> 
-</p>
-<%@product.lowest_rating.rating.times do %>
-  <span class="glyphicon glyphicon-star"></span>
-<%end%>
-<p>
-<%= @product.lowest_rating.body %> 
-</p>
 </div>
 </div>
 </div>
