@@ -26,23 +26,13 @@
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
+<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
-<%if @product.comments.any?%>
-  <%@product.highest_rating.rating.times do %>
-    <span class="glyphicon glyphicon-star"></span>
-  <%end%>
-  <p>
-  <%= @product.highest_rating.body %> 
-  </p>
-  <%@product.lowest_rating.rating.times do %>
-    <span class="glyphicon glyphicon-star"></span>
-  <%end%>
-  <p>
-  <%= @product.lowest_rating.body %> 
-  </p>
-<%end%>
+<%= render 'new_comment' %>
+<%= render 'comments' %>
 </div>
 </div>
 </div>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
