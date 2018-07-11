@@ -1,4 +1,5 @@
 <div class="product-reviews">
+    <% @comments = Comment.paginate(:page => params[:page], :per_page => 2)%>
     <% @comments.each do |comment| %>
         <div class="row">
             <hr>
@@ -8,4 +9,12 @@
         </div>
         <div class="rated" data-score="<%= comment.rating %>"></div>
     <% end %>
+</div>
+<hr>
+<div class="apple_pagination">
+    <%= will_paginate @comments%>
+    
+    <div class="page_info">
+      <%= page_entries_info @comments %>
+    </div>
 </div>
