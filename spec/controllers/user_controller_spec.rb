@@ -7,8 +7,8 @@ describe UsersController, type: :controller do
     describe 'GET #show' do
     
     context "user is loged in" do
-        let(:user) {User.create!(email: "someone2@email.com", password: "someone2")}
-        let(:user2) {User.create!(email: "someone4@email.com", password: "someone4")}
+        user = FactoryBot.create(:user)
+        user2 = FactoryBot.create(:user)
         
         before do
             sign_in user
@@ -25,13 +25,12 @@ describe UsersController, type: :controller do
         
     end
     context "user is loged out" do
-        let(:user) {User.create!(email: "someone3@email.com", password: "someone3")}
+        user3 = FactoryBot.create(:user)
         
         it "redirect to login" do
-            get :show, params: {id: user.id}
+            get :show, params: {id: user3.id}
             expect(response).to redirect_to (new_user_session_path)
         end
-        
         
     end
   end
