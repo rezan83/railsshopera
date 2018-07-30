@@ -14,7 +14,12 @@
 </p>
 
 <p>
-    <%= image_tag(@product.image_url, class: "img-responsive") %>
+
+    <img           src= "<%= asset_path(@product.image_url) %>"
+       data-zoom-image= "<%= asset_path(@product.image_url+".big.jpg") %>" 
+       class="img-responsive zoom"
+    />
+    
 </p>
 
 <p>
