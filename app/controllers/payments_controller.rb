@@ -15,6 +15,7 @@ class PaymentsController < ApplicationController
         )
         if charge.paid
           Order.create(user_id: @user.id ,product_id: @product.id, total: @product.price)
+          flash[:notice] = "Thanks for purchasing #{@product.name} (you paid:#{@product.price} )"
         end
         rescue Stripe::CardError => e
             # The card has been declined
