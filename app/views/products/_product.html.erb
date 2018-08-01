@@ -1,7 +1,11 @@
  <div class="col-sm-2 col-md-4">
+  <% cache product do %>
+  
   <%= image_tag(product.image_url, class: "img-responsive") %>
   <h1><a herf=<%= link_to product.name, product %><h1></a></h1>
   <p><%= product.description %></p>
   <strong>Price: $ <%= product.price %></strong>
   <p>Average Rating: <div class="rated" data-score="<%= product.average_rating %>"></div> </p>
+  <%end%>
+  <!--end product caching-->
 </div><!-- /col -->
