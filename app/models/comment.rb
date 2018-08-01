@@ -6,5 +6,6 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :product
   scope :rating_desc, -> {order(rating: :desc)} 
-  scope :rating_asce, -> {order(rating: :asce)}
+  scope :rating_asce, -> {order(rating: :asc)}
+  scope :as_created, -> {order(created_at: :desc)}
 end

@@ -31,14 +31,16 @@
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
-<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+<p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
 <%= form_with(url: '/payments/create') do |form| %>
   <%= hidden_field_tag(:product_id, @product.id) %>
   <%= render partial: "shared/stripe_checkout_button" %>
 <% end %>
 
-<%= render 'new_comment' %>
+  <%= render 'new_comment' %>
+
+
 <%= render 'comments' %>
 </div>
 </div>
