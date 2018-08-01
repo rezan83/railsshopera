@@ -1,5 +1,5 @@
 <div class="product-reviews">
-    <% @comments = Comment.paginate(:page => params[:page], :per_page => 5 ).as_created %>
+    <% @comments = @product.comments.paginate(:page => params[:page], :per_page => 5 ).as_created %>
     <% @comments.each do |comment| %>
         <%= render comment %>
     <% end %>
