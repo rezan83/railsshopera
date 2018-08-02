@@ -1,4 +1,4 @@
-$("#new_comment").html("<hr><strong>Thank you for the review!</strong>");
+$("#new_comment").html('<hr><p id="notice" class="alert alert-info">Thank you for the review!</p>');
 $('.product-reviews').prepend("<%= j render @comment %>");
 $("#average-rating").attr('data-score', "<%= @product.average_rating %>");
 refreshRating();

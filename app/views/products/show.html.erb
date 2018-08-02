@@ -33,6 +33,7 @@
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
+<p>Total reviews: <%= $redis.get("comments_count#{@product.id}") %></p>
 <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
 <%= form_with(url: '/payments/create') do |form| %>

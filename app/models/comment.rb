@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   validates :product, presence: true
   validates :rating, numericality: { only_integer: true }
   belongs_to :user
-  belongs_to :product
+  belongs_to :product, touch: true
   scope :rating_desc, -> {order(rating: :desc)} 
   scope :rating_asce, -> {order(rating: :asc)}
   scope :as_created, -> {order(created_at: :desc)}
