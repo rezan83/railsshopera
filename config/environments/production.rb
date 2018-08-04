@@ -99,4 +99,6 @@ Rails.application.configure do
                      :pool_size => 5
                     }
 
+config.web_socket_server_url = "wss://rezanbikes.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://rezanbikes.herokuapp.com', 'http://rezanbikes.herokuapp.com']
 end

@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = @product.comments.as_created
-    $redis.set("comments_count#{@product.id}", @product.comments_count)
   end
 
   # GET /products/new
