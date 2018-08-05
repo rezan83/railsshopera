@@ -11,5 +11,16 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
     // Called when there's incoming data on the websocket for this channel
     
   $(".cable-comment").show();
+  },
+  
+  listen_to_comments: function() {
+  return this.perform('listen', {
+    product_id: $("[data-product-id]").data("product-id")
+  });
   }
+  
+});
+
+$(document).on('turbolinks:load', function() {
+  App.product.listen_to_comments();
 });
