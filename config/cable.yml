@@ -7,7 +7,7 @@ test:
 production:
   adapter: redis
   # url: redis://localhost:6379/1
-  url: redis://redistogo:ad1c410aeb958191fae3636270cea98d@cod.redistogo.com:11804/
+  url: redis://redistogo:fd70ad61529ed720927c97fecf9473fc@soapfish.redistogo.com:9859/
   
   # adapter: postgres
   # url: postgres://robvmlacyogohx:138d16dc2a61da1433f8e2d72c01b4191e043129e4cab18ad61522ea63d82dba@ec2-23-23-226-190.compute-1.amazonaws.com:5432/df9igqrq13t09f
